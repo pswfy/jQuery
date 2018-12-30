@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+    $(function () {
+        $('.father').click(function () {
+            alert("father");
+        });
+       /* $('.son').click(function (event) {
+            alert("son");
+        event.stopPropagation();
+        /!* return false;*!/
+        });
+        $("a").click(function(event){
+            alert("aaa");
+        // return false;
+        event.preventDefault();
+        });*/
+    /*$('.father').trigger("click");//事件自动触发方式一：对象.trigger("事件类型")*/
+   /* $('.father').triggerHandler("click");//事件自动触发方式一：对象.trigger("事件类型")*/
+    /*1.trigger和triggerHandle的区别:*/
+
+    });
+    </script>
+</head>
+<body>
+1.trigger和triggerHandle的区别:
+2.triggerHandle:会阻止事件冒泡----与----默认行为
+3.trigger:不会阻止事件冒泡-----与----默认行为
+4.trigger:在a标签上也会阻止默认行为，所以如果需要有默认行为，可以在a下的子标检上绑定事件利用事件冒泡到a上
+<div class="father">
+    <div class="son"></div>
+</div>
+<a href="http://www.baidu.com">注册</a>
+<form action="http://www.taobao.com">
+    <input type="text">
+    <input type="submit">
+</form>
+<!-- built files will be auto injected -->
+</body>
+</html>

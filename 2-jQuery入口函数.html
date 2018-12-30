@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <script src="jquery-3.3.1.js"></script>
+    <title>selleat</title>
+</head>
+<body>
+1、原始js于jQuery入口函数的区别:
+<script>
+  /*原生与jQuery的局别*/
+  /*1.元素js的加载模式不同:原生js对等dom和图片都加载完，jQuery只会等dom加载完成就可以*/
+  /*2.多个入口函数原生的后写的会盖前面写的，jQuery的不会*/
+  window.onload = function (ve) {
+    /*Window.getComputedStyle()*/
+    //document.getComputedStyle(img).width;
+    /*方法返回一个对象，该对象在应用活动样式
+    表并解析这些值可能包含的任何基本计算后报告元素的所有CSS属性的值。
+    私有的CSS属性值可以通过对象提供的API或通过简单地使用CSS属性名称进行索引来访问。*/
+  };
+  //入口函数方式一
+  $(document).ready(function () {});
+  //入口函数方式二
+  jQuery(document).ready(function () {});
+  //入口函数方式三
+  $(function () {});
+  //入口函数方式四
+  jQuery(function () {});
+</script>
+</body>
+</html>

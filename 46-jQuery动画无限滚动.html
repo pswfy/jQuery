@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 800px;
+            height: 160px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            overflow: hidden;
+            margin: 100px auto;
+        }
+        ul{
+            list-style: none;
+            width: 2400px;
+            height: 160px;
+            background-color:#000000;
+        }
+        ul>li{
+            float: left;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+        let offset = 0;
+        let timer;
+        function autoPlay(){
+            timer = setInterval(function(){
+            offset += -5;
+            if(offset <= -1600){
+            offset = 0;
+            }
+            $("ul").css("marginLeft",offset)
+            },50);
+        }
+        autoPlay();
+        $("li").hover(function(){
+            clearInterval(timer);
+            $(this).siblings().fadeTo(100,0.5);
+            $(this).fadeTo(10,1);
+        },function(){
+            autoPlay();
+            $("li").fadeTo(100,1);
+        });
+      });
+    </script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><img src="images/DigitalRanking/306865.jpg" width="400" alt=""></li>
+            <li><img src="images/DigitalRanking/307279.jpg" width="400" alt=""></li>
+            <li><img src="images/DigitalRanking/310075.jpg" width="400" alt=""></li>
+            <li><img src="images/DigitalRanking/314367.jpg" width="400" alt=""></li>
+            <li><img src="images/DigitalRanking/306865.jpg" width="400" alt=""></li>
+            <li><img src="images/DigitalRanking/307279.jpg" width="400" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

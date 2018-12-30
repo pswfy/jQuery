@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <style>
+
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+    /**
+     * 内部插入
+     * 1.append:加到最后
+     * 2.appendTo:上面写法位置相反
+     * 3.prepend:加到前面
+     * 4.prependTo:上面写法位置相反
+     */
+    /**
+     * 外部插入
+     * 1.after:加到后面
+     * 2.before:加到全面
+     * 3.insertAfter:上面写法位置相反
+     * 4.insertBefore:上面写法位置相反
+     */
+      $(function(){
+        $("button").click(function(){
+            let $ul = $("ul");
+            let $li = $("<li>我是新加个li</li>");
+            // $ul.append($li);
+            // $ul.prepend($li);
+            // $li.appendTo($ul);
+            // $li.prependTo($ul);
+            $ul.after($li);
+            $ul.before($li);
+        });
+      });
+    </script>
+</head>
+<body>
+<button>添加节点</button>
+<ul>
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+</ul>
+</body>
+</html>

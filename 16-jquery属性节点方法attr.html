@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+      /**
+       * 1.attr:获取或设置属性节点的值，可以是一个叁数，也可以是两个叁数，一个叁数，获取属性节点的值，两个叁数设置属性节点的值
+       * 2.removeAttr:删除属性节点
+       */
+      $('span').attr("class");//一个叁数表示获取属性节点，注意:无论找到多少个元素都只会返回第一个指定节点属性节点的属性值
+      $('span').attr("class","box");//两个叁数表示设置属性节点的值，注意:找到的都会设置，找到多少个设置多少个元素
+      $('span').attr("asd","box");//如果是设置的属性节点不存在系统会新加属性节点
+      $('span').removeAttr("class asd")//找到的多会删除,连着删除多个属性节点，空格隔开
+      });
+    </script>
+</head>
+<body>
+<div id="app"></div>
+<span class="span1"></span>
+<span class="span2"></span>
+<!-- built files will be auto injected -->
+</body>
+</html>

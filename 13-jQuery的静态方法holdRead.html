@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <script src="jquery-3.3.1.js"></script>
+    <title>holdRead</title>
+</head>
+<body>
+<button>恢复read事件</button>
+1.holdRead:暂停ready事件true
+2.holdRead:一个叁数boolean类型
+<script>
+    $.holdReady(true);//暂停ready
+$(document).ready(function () {
+$.holdReady(false);//恢复ready
+});
+</script>
+<script>
+let btn = document.getElementsByTagName("button")[0];
+btn.onclick = function () {
+alert("1");
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+    $(function () {
+    $('.father').click(function () {
+    alert("father");
+    });
+    $('.son').click(function (event) {
+    alert("son");
+    event.stopPropagation();
+   /* return false;*/
+    });
+    $("a").click(function(event){
+    alert("aaa");
+    // return false;
+    event.preventDefault();
+    });
+    });
+    </script>
+</head>
+<body>
+1.什么是事件冒泡:事件冒泡是指事件从下级一层层上传的行为
+2.如何阻止事件冒泡:在子元素中return false----/------还可以在回调中指定event.stopPropagation()
+3.什么是默认行为:默认事件是指标签上默认的事件，如a标签的跳转
+4.如何阻止默认行为:事件回调中:return false----/------还可以在回调中指定event.preventDefault()
+<div class="father">
+    <div class="son"></div>
+</div>
+<a href="http://www.baidu.com">注册</a>
+<form action="http://www.taobao.com">
+    <input type="text">
+    <input type="submit">
+</form>
+<!-- built files will be auto injected -->
+</body>
+</html>

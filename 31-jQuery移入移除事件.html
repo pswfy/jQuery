@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+        /*$(".father").mouseover(function(){
+            console.log("mouseover");
+        }).mouseout(function () {
+            console.log("mouseout");
+        });*/
+         /* $(".father").mouseenter(function(){
+          console.log("mouseenter");
+          }).mouseleave(function () {
+          console.log("mouseleave");
+          });*/
+         $(".father").hover(function(){
+            console.log("1");
+         },function(){
+            console.log("2");
+         });
+
+      });
+    </script>
+</head>
+<body>
+1.mouseover和mouseout:子元素被移入移除也会触发父元素事件
+2.mouseenter和mouseleave:子元素被移除移除不会触发父元素事件
+3.hover:两个叁数:分别是:mouseenter和mouseleave
+4.hover:一个叁数:mouseenter和mouseleave
+<div class="father">
+    <div class="son"></div>
+</div>
+<!-- built files will be auto injected -->
+</body>
+</html>

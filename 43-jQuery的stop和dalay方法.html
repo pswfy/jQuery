@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .one{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .two{
+            width: 500px;
+            height: 10px;
+            background-color: blue;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+        $("button").eq(0).click(function(){
+            $(".one").stop().animate({
+            /**
+             * 多个属性，默认动画一起执行
+             */
+            width:500
+            },1000).delay(2000).animate({
+            height:500
+            },1000);
+        });
+        $("button").eq(1).click(function(){
+            /*$("div").stop();*///没有叁数立即停止动画当前动画
+            /*$("div").stop(false);*///叁数false也是立即停止动画当前动画
+            /*$("div").stop(false,false);*///两个false，也是立即停止动画当前动画
+            /*$("div").stop(true);*///立即停止当前和后面所以
+            //$("div").stop(true,false);//立即停止当前和后面所以
+            /*$("div").stop(false,true);*/ //停止当前的，继续后面的
+            $("div").stop(true,true);
+
+        });
+      });
+    </script>
+</head>
+<body>
+1.stop():停止当前动画
+2.delay(2000):延时
+<button>开始动画</button>
+<button>停止动画</button>
+<div class="one"></div>
+<div class="two"></div>
+</body>
+</html>

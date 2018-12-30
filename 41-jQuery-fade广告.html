@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .ad{
+            position: fixed;
+            right: 0;
+            bottom:0;
+            display: none;
+        }
+        .ad>span{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            top:0;
+            right:0;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+        $("span").click(function(){
+            $(".ad").remove();
+        });
+       /* $(".ad").slideDown(1000,function(){
+            $(this).fadeOut(1000,function(){
+                $(this).fadeIn(1000);
+            });
+        });*/
+      $(".ad").stop().slideDown(1000).fadeOut(1000).fadeIn(1000);
+      });
+    </script>
+</head>
+<body>
+<!--remove() 方法移除被选元素，包括所有文本和子节点。-->
+<div class="ad">
+    <img src="images/login.png" alt="" width="300">
+    <span>X</span>
+</div>
+</body>
+</html>

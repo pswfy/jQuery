@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+
+      });
+    </script>
+</head>
+<body>
+<span></span>
+1.属性:对象身上保持的变量就是是属性
+2.操作属性:设置:p.name="123"或p[name]="123",获取:p.name或p[name]
+3.属性节点:html标签上的添加的属性是属性节点：在浏览器中的attributes：属性下的是属性是属性节点
+4.操作属性加点:setAttribute(s,v)和getAttribute(s)
+5.两者的区别:任何对象都有属性，但是只有dom对象才有属性节点
+<script>
+    window.onload=function(){
+        let span = document.getElementsByTagName('span')[0];
+        span.setAttribute("name","l122");//设置属性加点
+        console.log(span.getAttribute('name'));//获取属性加点
+    }
+</script>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
+</html>

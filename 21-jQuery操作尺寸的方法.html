@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 50px solid #000;
+            margin-left: 50px;
+            position: relative;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background-color: blue;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+        //获取元素的width
+      let btns = document.getElementsByTagName("button");
+      btns[0].onclick = function () {
+     /* console.log($(".father").width());//获取元素的宽度：直接设置的是多少就是多少
+      console.log($(".son").width("500px"));//获取元素的宽度：直接设置的是多少就是多少*/
+      /*console.log($(".father").innerWidth());
+      console.log($(".son").innerWidth());*/
+      /*该方法包含 padding，但不包含 border 和 margin。*/
+      /*console.log($(".father").outerHeight());*/
+      console.log($('.son').offset({
+        left:10,
+        top:100
+      }));//设置距离窗口左边的偏移位
+      console.log($('.son').offset().left);//获取距离窗口左边的偏移位
+      console.log($('.son').offset().top);//获取距离窗口top的距离px
+      console.log($('.son').position());//获取距离定位元素的位置，不能设置
+      };
+      btns[1].onclick = function () {
+      $(".father").width("500px");//设置width
+      $('.son').offset({
+        left:10,
+        top:20
+      });//设置元素距离窗口的距离，是一个对象。分别有left属性和top属性，表示距离多远没单位，默认就是px
+      };
+      });
+
+       /* width() - 设置或返回元素的宽度
+        height() - 设置或返回元素的高度
+        innerWidth() - 返回元素的宽度（包含 padding）
+        innerHeight() - 返回元素的高度（包含 padding）
+        outerWidth() - 返回元素的宽度（包含 padding 和 border）
+        outerWidth(true) - 返回元素的宽度（包含 padding 和 border）
+        */
+
+      /**
+       * offset:获取距离窗口的偏移位置
+       * position:获取距离定位元素的偏移位置:只能获取不能设置css可以设置的了
+       */
+    </script>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<button>获取</button>
+<button>设置</button>
+<!-- built files will be auto injected -->
+</body>
+</html>

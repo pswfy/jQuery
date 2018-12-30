@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: none;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+      let $button=$('button');
+        $button.eq(0).click(function(){
+            $("div").show(1000,function(){
+                console.log("动画完成后的回调show");
+            });
+        });
+        $button.eq(1).click(function(){
+            $("div").hide(1000,function(){
+                console.log("动画完成后的回调hide");
+            });
+        });
+        $button.eq(2).click(function(){
+            $("div").toggle(1000,function(){
+            console.log("动画完成后的回调toggle");
+            });
+        });
+      });
+    </script>
+</head>
+<body>
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<div></div>
+</body>
+</html>

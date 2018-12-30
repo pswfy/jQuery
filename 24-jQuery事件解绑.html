@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+    /**
+     * off事件移除
+     */
+    $(function () {
+    function text1() {
+    alert("hello event1");
+    }
+
+    function text2() {
+    alert("hello event2");
+    }
+    function text3() {
+    alert("hello event3");
+    }
+    function text4() {
+    alert("hello event4");
+    }
+
+    $("button").eq(0).click(text1);
+    $("button").eq(0).click(text2);
+    $("button").eq(0).mouseleave(text3);
+    $("button").eq(0).mouseenter(text4);
+   /* $("button").eq(0).off();//没有叁数：移除所以事件*/
+    $("button").eq(0).off();//所以类型的事件
+    $("button").eq(0).off('click');//一个叁数，把这个类型的所以事件移除
+    $("button").eq(0).off('click','text1');//两个叁数，移除指定类型的指定事件
+    });
+    </script>
+</head>
+<body>
+<div id="app"></div>
+<button>我是事件方式1</button>
+<button>我是事件方式2</button>
+<!-- built files will be auto injected -->
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+      //渐渐个设置
+        $("div").css("width","100px");
+        $("div").css("height","100px");
+        $("div").css("background","red");
+        //链式设置：注意大于三步建议分开
+        $("div").css("width","10px").css("height","10px").css("background","tomato");
+        //批量设置
+        $("div").css({"width":"200px","height":"200px","background":"red"});
+        /*获取scc样子值:*/
+      console.log($("div").css("width"));
+      console.log($("div").css("height"));
+      console.log($("div").css("background"));
+      });
+    </script>
+</head>
+<body>
+<div></div>
+<!-- built files will be auto injected -->
+</body>
+</html>

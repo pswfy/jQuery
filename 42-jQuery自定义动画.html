@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .one{
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            background-color: red;
+        }
+        .two{
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            background-color: blue;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+        //三个叁数:第一个是对象:需要动画的属性--第二个叁数：时长--第三个叁数:回调
+        $('button').eq(0).click(function(){
+           /* $(".one").animate({
+                width:500
+            },1000,function(){
+                alert("自定义动画完成");
+            });*/
+            $(".one").animate({
+                marginLeft:500
+            },5000,function(){
+                alert("自定义动画完成");
+            });
+            $(".two").animate({
+            marginLeft:500
+            },5000,"linear",function(){
+            alert("自定义动画完成");
+            });
+        });
+        //累加
+        $('button').eq(1).click(function(){
+            $(".one").animate({
+                width:"+=100"
+            },1000,function () {
+                alert("自定义动画执行完毕");
+            });
+        });
+        //关键字
+        $('button').eq(2).click(function(){
+            $(".one").animate({
+            // width:"hide"
+            width:'toggle'
+            },1000,function () {
+            });
+        });
+      });
+    </script>
+    <!--1.对象:-->
+    <!--2.时长:-->
+    <!--3.节奏:-->
+    <!--4.回调:-->
+</head>
+<body>
+<!--easing:linear:匀速---swing:缓动:默认-->
+<button>操作属性</button>
+<button>累加属性</button>
+<button>关键字</button>
+<div class="one"></div>
+<div class="two"></div>
+</body>
+</html>

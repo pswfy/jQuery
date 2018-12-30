@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+    $(function () {
+    /*方式一*/
+    $("button").eq(0).click(function () {
+    alert("hello event");
+    });
+    $("button").eq(0).click(function () {
+    alert("hello event -1");
+    });
+    $("button").eq(0).mouseleave(function () {
+    alert("hello event -mouseleave");
+    });
+    $("button").eq(0).mouseout(function () {
+    alert("hello event -mouseleave");
+    });
+    /*方式2*/
+    $("button").eq(1).on('click',function(){
+    alert("hello event on");
+    });
+    });
+    </script>
+</head>
+<body>
+jQuery中有两种绑定事件的方式:
+1.eventName(fn):
+2.on(eventName,fn):
+3.区别:on支持所有的js事件
+4.注意:多个事件不会覆盖,还可以是多种事件
+<div id="app"></div>
+<button>我是事件方式1</button>
+<button>我是事件方式2</button>
+<!-- built files will be auto injected -->
+</body>
+</html>

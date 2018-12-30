@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            height: 450px;
+            margin: 50px auto;
+            border: 1px solid #000;
+        }
+        h1{
+            font-size: 20px;
+            line-height: 35px;
+            color: deeppink;
+            padding-left: 10px;
+        }
+        ul>li{
+            list-style: none;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-bottom: 1px dashed #CCCCCC;
+        }
+        span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #CCCCCC;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 10px;
+        }
+        ul>li:nth-child(-n+3) span{
+            background-color: deeppink;
+            color: whitesmoke;
+        }
+        .pa{
+            width: 100%;
+            height: 100px;
+            margin-top: 5px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 40px;
+            color: white;
+            background-color: red;
+            display: none;
+        }
+        .show .pa{
+            display: block;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+        $("ul>li").mouseenter(function(){
+            $(this).addClass("show");
+        }).mouseleave(function(){
+            $(this).removeClass("show");
+        });
+      });
+    </script>
+</head>
+<body>
+<div class="box">
+    <h1>电影排行榜</h1>
+    <ul>
+        <li><span>1</span>电影名称<div class="pa">1</div></li>
+        <li><span>2</span>电影名称<div class="pa">2</div></li>
+        <li><span>3</span>电影名称<div class="pa">3</div></li>
+        <li><span>4</span>电影名称<div class="pa">4</div></li>
+        <li><span>5</span>电影名称<div class="pa">5</div></li>
+        <li><span>6</span>电影名称<div class="pa">6</div></li>
+    </ul>
+</div>
+</body>
+</html>

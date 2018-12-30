@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>selleat</title>
+    <style>
+        div{
+            width: 50px;
+            height: 100px;
+            background-color: red;
+            margin-top: 10px;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+      //1:contains(text):包含指定文本内容的元素，不是等于的关系是有的关系，包含的关系
+      //2:empty:内容为空，没有文本也没有子元素
+      //3:has(select):包含指定的标签的元素
+      //4:parent:有文本或有子元素
+
+      /*let $div=$('div:empty');
+      console.log($div);*/
+      /*let $div=$('div:parent');
+      console.log($div);
+      });*/
+      // let $div=$('div:contains("我的div")');
+      // console.log($div);
+      // });
+      let $div=$('div:has(span)');
+      console.log($div);
+      });
+    </script>
+</head>
+<body>
+<div></div>
+<div>我的div</div>
+<div>我的div123</div>
+<div><span></span></div>
+<div><p></p></div>
+<!-- built files will be auto injected -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <script src="jquery-3.3.1.js"></script>
+    <title>原始的map方法和jQuery的map方法</title>
+</head>
+<body>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+<script>
+    let arr=[1,2,3,4,5,6,7,8,9];
+    //原始的map
+    //第一个叁数:item,
+    //第二个叁数:index
+    //第叁数叁数:遍历谁返回谁
+    //不能遍历伪数组
+    arr.map(function(value,index,array){
+    console.log(value,index,array);
+    });
+    //jquery的map
+    $(function(){
+    //回调第一个叁数:要遍历,
+    //回调第二个叁数:回调(下标,每一项)
+    //能遍历伪数组
+        $.map(arr,function(index,value){
+           return value+index;//对遍历的加工返回新的数组
+        });
+    });
+    //jquery的each和map的区别：
+    //1.each:默认返回遍历谁返回谁
+    //2.map:默认返回空数组
+    //3.each不可以在遍历的数组不能对遍历的数组加工
+    //4.map可以对遍历的数组做现有的操作，返回新的数组
+</script>
+</body>
+</html>
